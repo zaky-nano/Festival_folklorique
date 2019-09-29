@@ -3,6 +3,7 @@
 
 include("_debut.inc.php");
 include("connexion_festival.php");
+include("sessions.php");
 
 
 
@@ -92,9 +93,24 @@ if(isset($_POST['formulaireconnexion'])) {
 
 
 
+include("sessions.php");
 
 include "_debut.inc.php";
 include "connexion_festival.php";
+
+if (isset($_SESSION['nom']) ) { 
+
+
+
+		echo '<a class="resultat"><h2>Connexion réussie, Nom Etablissment: ' . $_SESSION['nom'] . ' </h2></a><p>';
+}
+if (isset($erreur) AND !isset($_SESSION['nom']) ) { 
+
+
+
+		echo '<a class="resultat"><h2>Erreur: ' . $erreur . ' </h2></a><p>';
+}
+
 
 echo " <br> 
 <table width='80%' cellspacing='0' cellpadding='0' align='center'>

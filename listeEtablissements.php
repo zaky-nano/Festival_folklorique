@@ -2,15 +2,16 @@
 include("_debut.inc.php");
 include("_gestionBase.inc.php"); 
 include("_controlesEtGestionErreurs.inc.php");
+include("sessions.php");
 
 
-/*
+
 if (!isset($_SESSION['nom']) AND !isset($_SESSION['id']) ) { 
 header("Location: index.php");
 } 
 else {
 
-*/
+
 
 
 $bdd=connect();
@@ -80,7 +81,7 @@ class='tabNonQuadrille'>
       Création d'un établissement</a ></td>
   </tr>
 </table>";
-/*}*/
+}
 ?>
 
 

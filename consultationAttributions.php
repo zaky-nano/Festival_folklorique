@@ -3,8 +3,16 @@
 include("_debut.inc.php");
 include("_gestionBase.inc.php"); 
 include("_controlesEtGestionErreurs.inc.php");
+include("sessions.php");
+
 
 // CONNEXION AU SERVEUR MYSQL PUIS SÉLECTION DE LA BASE DE DONNÉES festival
+
+if (!isset($_SESSION['nom']) AND !isset($_SESSION['id']) ) { 
+header("Location: index.php");
+} 
+else {
+
 
 $bdd=connect();
 if (!$bdd)
@@ -102,5 +110,5 @@ $lgGroupe = $rsGroupe->fetch();
 
    } // Fin de la boucle sur les établissements
 }
-
+}
 ?>

@@ -1,4 +1,5 @@
 <?php
+include("sessions.php");
 
 include("_gestionBase.inc.php");
 include("formulaire_conn.php");
@@ -22,7 +23,7 @@ if(isset($_POST['formulaireconnexion'])) {
     $queryuser = $bdd->prepare("SELECT * FROM etablissement WHERE nom = ? AND id = ?");
     $queryuser->execute(array($nom, $id));
     $userexist = $queryuser->rowCount();
-   if($userexist == 1) {
+   if($userexist == 1 ) {
          $userinfo = $queryuser->fetch();
 		 $_SESSION['id'] = $userinfo['id'];
 		 $_SESSION['nom'] = $userinfo['nom'];
@@ -38,6 +39,7 @@ if(isset($_POST['formulaireconnexion'])) {
          $_SESSION['nombreChambresOffertes	'] = $userinfo['nombreChambresOffertes	'];
 
         header("Location: index.php");
+
 		
       } else {
          $erreur = "Mauvais nom d'établissement ou d'identifiant établissement !";
@@ -48,6 +50,8 @@ if(isset($_POST['formulaireconnexion'])) {
    } else {
       $erreur = "Tous les champs doivent être complétés !";
    }
-
+   
+   
+   
 
 ?>

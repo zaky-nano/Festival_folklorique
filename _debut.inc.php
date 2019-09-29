@@ -31,6 +31,8 @@ echo '
       Gestion Ã©tablissements</a></td>
       <td class="menu"><a href="consultationAttributions.php">
       Attributions chambres</a></td>
+	  <td class="menu"><a href="deconnexion_festival.php">
+      Déconnexion</a></td>
    </tr>
 </table>
 <br>';

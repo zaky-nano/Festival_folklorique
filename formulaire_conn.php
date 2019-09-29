@@ -1,3 +1,4 @@
+
 <html>
    <head>
       <title>Connexion à Festival Folklores du Monde</title>
@@ -17,7 +18,7 @@
          </form>
          <div style="text-align:center">
          
-               <a href="Inscription_MZshop.php">S'inscrire</a>
+               <a href="creationEtablissement.php?action=demanderCreEtab">S'inscrire</a>
          </div> </br> </br>
          <?php
          if(isset($erreur)) {
