@@ -65,7 +65,9 @@ function obtenirDetailEtablissement($bdd, $id)
 function supprimerEtablissement($bdd, $id)
 {
    $req="delete from Etablissement where id='$id'";
-   mysql_query($req, $bdd);
+   
+   $rsEtabl = $bdd->prepare($req);
+	$rsEtabl->execute();
 }
  
 function modifierEtablissement($bdd, $id, $nom, $adresseRue, $codePostal, 
