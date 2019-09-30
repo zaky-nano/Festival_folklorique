@@ -1,4 +1,5 @@
 <?php
+include("sessions.php");
 
 echo '
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
@@ -30,11 +31,20 @@ echo '
       <td class="menu"><a href="listeEtablissements.php">
       Gestion Ã©tablissements</a></td>
       <td class="menu"><a href="consultationAttributions.php">
-      Attributions chambres</a></td>
-	  <td class="menu"><a href="deconnexion_festival.php">
-      Déconnexion</a></td>
-   </tr>
-</table>
-<br>';
+      Attributions chambres</a></td>';
+	  
+	if (isset($_SESSION['id']) AND isset($_SESSION['nom']) ) 
+	{
+		echo "
+		<td class='menu'> 
+		<a href='deconnexion_festival.php'>
+		Déconnexion</a></td>";
+	}
+	else
+	{
+		        
+	}
+			
+	 
 
 
