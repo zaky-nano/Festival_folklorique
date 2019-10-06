@@ -51,7 +51,7 @@ if(isset($_POST['formulaireconnexion'])) {
 
 
       }
-   } else {
+   } else { 
       $erreur = "Tous les champs doivent être complétés !";
    }
    

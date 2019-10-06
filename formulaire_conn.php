@@ -1,4 +1,3 @@
-<?php include("sessions.php"); ?>
  
 <html>
    <head>
@@ -13,11 +12,11 @@
          <form method="POST" action="">
 		 
 		 <label for="id_admin">identifiant administrateur:</label>
-		 <input type="text" name="id_admin" placeholder="identifiant administrateur" />
+		 <input type="text" name="id_admin"  placeholder="identifiant administrateur" size="50" />
 		 
 		 
 		 <label for="id">mot de passe administrateur :</label>
-            <input type="password" name="mdp_admin" placeholder="mot de passe administrateur" />
+            <input type="password" name="mdp_admin"  placeholder="mot de passe administrateur" size="50" />
             <br /><br />
             <input type="submit" name="formulaireconnexion" value="Se connecter " /><br /><br />
          </form>
@@ -30,11 +29,7 @@
 
 	  </div> </br> </br>
 
-         <?php
-         if(isset($erreur)) {
-            echo '<font color="red">'.$erreur."</font>";
-         }
-         ?>
+         
 		</div>
    </body>
 </html>
