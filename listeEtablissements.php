@@ -6,7 +6,7 @@ include("sessions.php");
 
 
 
-if (!isset($_SESSION['nom']) AND !isset($_SESSION['id']) ) { 
+if (!isset($_SESSION['id_admin']) AND !isset($_SESSION['mdp_admin']) ) { 
 header("Location: index.php");
 } 
 else {

@@ -2,7 +2,10 @@
 include("sessions.php");
 
 include("_gestionBase.inc.php");
-include("formulaire_conn.php");
+
+   include("formulaire_conn.php");
+
+
 
  
 
@@ -17,32 +20,33 @@ if (!$bdd)
 
 
 if(isset($_POST['formulaireconnexion'])) {
-   $nom = $_POST['nom'];
-   $id = $_POST['id'];
-   if(!empty($nom) AND !empty($id)) {
-    $queryuser = $bdd->prepare("SELECT * FROM etablissement WHERE nom = ? AND id = ?");
-    $queryuser->execute(array($nom, $id));
+   $id_admin = $_POST['id_admin'];
+   $mdp_admin = sha1($_POST['mdp_admin']);
+   if(!empty($id_admin) AND !empty($mdp_admin)) {
+    $queryuser = $bdd->prepare("SELECT * FROM administrateur WHERE id_admin = ? AND mdp_admin = ?");
+    $queryuser->execute(array($id_admin, $mdp_admin));
     $userexist = $queryuser->rowCount();
    if($userexist == 1 ) {
          $userinfo = $queryuser->fetch();
-		 $_SESSION['id'] = $userinfo['id'];
-		 $_SESSION['nom'] = $userinfo['nom'];
-         $_SESSION['adresseRue'] = $userinfo['adresseRue'];
+		 $_SESSION['id_admin'] = $userinfo['id_admin'];
+		 $_SESSION['mdp_admin'] = $userinfo['mdp_admin'];
+         /*
+		 $_SESSION['adresseRue'] = $userinfo['adresseRue'];
          $_SESSION['codePostal'] = $userinfo['codePostal'];
          $_SESSION['ville'] = $userinfo['ville'];
          $_SESSION['tel'] = $userinfo['tel'];
          $_SESSION['adresseElectronique'] = $userinfo['adresseElectronique'];
          $_SESSION['type'] = $userinfo['type'];  
 		 $_SESSION['civiliteResponsable'] = $userinfo['civiliteResponsable'];
-         $_SESSION['nomResponsable'] = $userinfo['nomResponsable'];
-         $_SESSION['prenomResponsable'] = $userinfo['prenomResponsable'];
-         $_SESSION['nombreChambresOffertes	'] = $userinfo['nombreChambresOffertes	'];
-
+         $_SESSION['id_adminResponsable'] = $userinfo['id_adminResponsable'];
+         $_SESSION['preid_adminResponsable'] = $userinfo['preid_adminResponsable'];
+         $_SESSION['id_adminbreChambresOffertes	'] = $userinfo['id_adminbreChambresOffertes	'];
+		*/
         header("Location: index.php");
 
 		
       } else {
-         $erreur = "Mauvais nom d'établissement ou d'identifiant établissement !";
+         $erreur = "Mauvais identifiant administrateur ou mot de passe administrateur !";
       }  
 
 

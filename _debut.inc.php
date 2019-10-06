@@ -33,7 +33,7 @@ echo '
       <td class="menu"><a href="consultationAttributions.php">
       Attributions chambres</a></td>';
 	  
-	if (isset($_SESSION['id']) AND isset($_SESSION['nom']) ) 
+	if (isset($_SESSION['id_admin']) AND isset($_SESSION['mdp_admin']) ) 
 	{
 		echo "
 		<td class='menu'> 

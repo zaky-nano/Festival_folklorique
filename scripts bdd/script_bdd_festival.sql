@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 29 sep. 2019 à 22:14
+-- Généré le :  Dim 06 oct. 2019 à 14:00
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -11,8 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
-
-
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -23,6 +21,27 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `festival`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `administrateur`
+--
+
+DROP TABLE IF EXISTS `administrateur`;
+CREATE TABLE IF NOT EXISTS `administrateur` (
+  `id_admin` int(16) NOT NULL,
+  `mdp_admin` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_admin`) KEY_BLOCK_SIZE=16
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `administrateur`
+--
+
+INSERT INTO `administrateur` (`id_admin`, `mdp_admin`) VALUES
+(1012, '7110eda4d09e062aa5e4a390b0a572ac0d2c0220'),
+(1013, '39dfa55283318d31afe5a3ff4a0e3253e2045e43');
 
 -- --------------------------------------------------------
 

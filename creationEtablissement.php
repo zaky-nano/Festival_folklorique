@@ -3,9 +3,19 @@
 include("_debut.inc.php");
 include("_gestionBase.inc.php"); 
 include("_controlesEtGestionErreurs.inc.php");
+include("sessions.php");
+
+
+
+
+
 
 // CONNEXION AU SERVEUR MYSQL PUIS SÉLECTION DE LA BASE DE DONNÉES festival
-
+ if (!isset($_SESSION['id_admin']) AND !isset($_SESSION['mdp_admin']) ) { 
+echo "
+      <h5><center>Vous devez être connecté pour effectuer cette action !</center></h5>";
+} 
+else {
 $connexion=connect();
 if (!$connexion)
 {
@@ -185,6 +195,7 @@ echo "
 
 // En cas de validation du formulaire : affichage des erreurs ou du message de 
 // confirmation
+
 if ($action=='validerCreEtab')
 {
    if (nbErreurs()!=0)
@@ -193,9 +204,9 @@ if ($action=='validerCreEtab')
    }
    else
    {
-      echo "
+     echo "
       <h5><center>La création de l'établissement a été effectuée</center></h5>";
-   }
-}
+   
+}}}
 
 ?>
