@@ -109,13 +109,14 @@ if (isset($erreur) AND !isset($_SESSION['id_admin']) ) {
 
 
 		echo '<a class="resultat"><h2>Erreur: ' . $erreur . ' </h2></a><p>';
+	 
 }
 
 
-echo " <br> 
+echo "  
 <table width='80%' cellspacing='0' cellpadding='0' align='center'>
    <tr>  
-      <td class='texteAccueil'>
+      <td class='texteAccueil'></br></br></br></br></br></br>
          Cette application web permet de gérer l'hébergement des groupes de musique 
          durant le festival Folklores du Monde.
       </td>

@@ -47,9 +47,14 @@ td,tr
 /* Style du tableau contenant les éléments de menu : fond bleu ciel, épaisseur 
 1px, espacement de 3x entre la bordure gauche de chaque cellule et le texte et
 texte centré */
-.menu {
- 
-  font-size:20px;
+ul #menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background : linear-gradient(#000000, #677179);
+  display: flex;
+  justify-content: center;
 
 }
 

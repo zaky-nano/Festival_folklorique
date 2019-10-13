@@ -25,7 +25,7 @@ echo '
 </table>
 
 <!--  Tableau contenant les menus -->
-<table width="80%" cellpadding="0" cellspacing="0" class="tabMenu" align="center">
+<table id="menu" width="50%" cellpadding="20" cellspacing="20" class="tabMenu" align="center">
    <tr>
       <td class="menu"><a href="index.php">Accueil</a></td>
       <td class="menu"><a href="listeEtablissements.php">
@@ -38,7 +38,7 @@ echo '
 		echo "
 		<td class='menu'> 
 		<a href='deconnexion_festival.php'>
-		Déconnexion</a></td>";
+		Deconnexion</a></td>";
 	}
 	else
 	{
